@@ -26,6 +26,7 @@ def date_range(start, n):
         raise TypeError("Number of days must be an integer.")
     else:
         date_list = []
+        for i in range(n):
             date_obj = datetime.strptime(start_date, '%Y-%m-%d') + timedelta(days=i)
             date_list.append(date_obj)
 
