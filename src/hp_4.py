@@ -11,7 +11,7 @@ def reformat_dates(old_dates):
     new_dates = []
     for date_str in old_dates:
         date_obj = datetime.strptime(date_str, '%Y-%m-%d')
-        new_date_str = datetime.strftime(date_obj, '%d %b %y')
+        new_date_str = datetime.strftime(date_obj, '%d %b %Y')
         new_dates.append(new_date_str)
     return new_dates
 
@@ -27,7 +27,7 @@ def date_range(start, n):
     else:
         date_list = []
         for i in range(n):
-            date_obj = datetime.strptime(start_date, '%Y-%m-%d') + timedelta(days=i)
+            date_obj = datetime.strptime(start, '%Y-%m-%d') + timedelta(days=i)
             date_list.append(date_obj)
 
         return date_list
